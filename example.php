@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/vendor/autoload.php";
 $collection 	= 	(new MongoDB\Client)->myDb;
-$m 				= 	new src\Mongo($collection);
+$m 				= 	new Mongo\Mongo($collection);
 $textData		=	[];
 $options 		=	[]; 
 $intData 		= 	[];
