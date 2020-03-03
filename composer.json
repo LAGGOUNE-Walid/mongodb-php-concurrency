@@ -5,6 +5,7 @@
     "keywords": ["PHP","MongoDB","concurrency"],
     "homepage": "https://github.com/Seldaek/monolog",
     "license": "MIT",
+    "minimum-stability" : "stable",
     "authors": [
         {
             "name": "LAGGOUNE Walid",
