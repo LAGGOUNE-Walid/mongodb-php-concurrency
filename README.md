@@ -10,10 +10,10 @@ sudo composer require mongo-concurrency/mongo-concurrency @dev
 <?php
 require_once __DIR__ . "/vendor/autoload.php";
 $collection 	= 	(new MongoDB\Client)->myDb;
-$m 				    = 	new MongoConcurrency\Mongo($collection);
-$textData		  =	  [];
-$options 		  =	  []; 
-$intData 		  = 	[];
+$m		= 	new MongoConcurrency\Mongo($collection);
+$textData	=	  [];
+$options 	=	  []; 
+$intData 	= 	[];
 echo "Generating test data ... ";
 for ($i=1; $i <= 10000  ; $i++) { 
 	array_push($intData, [$i => $i]);
@@ -23,16 +23,24 @@ for ($i=0; $i <= 5000 ; $i++) {
 }
 echo "[+] \n";
 
-$m->selectFrom("test1", [], 3, function(iterable $results) {
+
+// select from test1 for 5 seconds with no options array (options is the filter array in : https://docs.mongodb.com/php-library/v1.2/reference/method/MongoDBCollection-findOne/#phpmethod.MongoDB\Collection::findOne)
+$m->selectFrom("test1", [], 5, function(iterable $results) {
 	echo "  [+] End select : ".sizeof($results)."\n";
 });
-$m->insertTo("test2", $textData, 3, function() {
+
+// insert in to test2 array textData for 1 second
+$m->insertTo("test2", $textData, 1, function() {
 	echo "  [+] End insert \n";
 });
-$m->updateFrom("test2", ["name" => "john"], ["name" => "alex"], 3, function(int $modified) {
+
+// update from test2 where name = john to name = alex for 6 seconds
+$m->updateFrom("test2", ["name" => "john"], ["name" => "alex"], 6, function(int $modified) {
 	echo " [+] End update : ".$modified." \n";
 });
-$m->deleteFrom("test2", ["name" => "john"], 3, function(int $intDataeleted) {
+
+// delete from test2 where name = john for 5 seconds
+$m->deleteFrom("test2", ["name" => "john"], 5, function(int $intDataeleted) {
 	echo " [+] End delete : ".$intDataeleted."\n";
 });
 $m->run();
