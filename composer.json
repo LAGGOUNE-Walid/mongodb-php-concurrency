@@ -1,5 +1,5 @@
 {
-    "name": " mongodb-php-concurrency/mongodb-php-concurrency",
+    "name": "MongoConcurrency/MongoConcurrency",
     "type": "library",
     "description": "Concurrency PHP library for MongoDB",
     "keywords": ["PHP","MongoDB","concurrency"],
@@ -18,7 +18,7 @@
     },
     "autoload": {
     	"psr-4" : {
-    		"Mongo\\" : "src"
+    		"MongoConcurrency\\" : "src"
     	}
     }
 }

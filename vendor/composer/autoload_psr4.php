@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Mongo\\' => array($baseDir . '/src'),
     'MongoDB\\' => array($vendorDir . '/mongodb/mongodb/src'),
+    'MongoConcurrency\\' => array($baseDir . '/src'),
 );

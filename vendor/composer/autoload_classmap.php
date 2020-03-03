@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'MongoConcurrency\\Mongo' => $baseDir . '/src/Mongo.php',
     'MongoDB\\BulkWriteResult' => $vendorDir . '/mongodb/mongodb/src/BulkWriteResult.php',
     'MongoDB\\ChangeStream' => $vendorDir . '/mongodb/mongodb/src/ChangeStream.php',
     'MongoDB\\Client' => $vendorDir . '/mongodb/mongodb/src/Client.php',
@@ -82,5 +83,4 @@ return array(
     'MongoDB\\Operation\\Watch' => $vendorDir . '/mongodb/mongodb/src/Operation/Watch.php',
     'MongoDB\\Operation\\WithTransaction' => $vendorDir . '/mongodb/mongodb/src/Operation/WithTransaction.php',
     'MongoDB\\UpdateResult' => $vendorDir . '/mongodb/mongodb/src/UpdateResult.php',
-    'Mongo\\Mongo' => $baseDir . '/src/Mongo.php',
 );
