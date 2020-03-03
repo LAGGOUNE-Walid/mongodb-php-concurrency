@@ -1,0 +1,24 @@
+{
+    "name": " mongodb-php-concurrency/mongodb-php-concurrency",
+    "type": "library",
+    "description": "Concurrency PHP library for MongoDB",
+    "keywords": ["PHP","MongoDB","concurrency"],
+    "homepage": "https://github.com/Seldaek/monolog",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LAGGOUNE Walid",
+            "email": "walidlaggoue159@gmail.com",
+            "homepage": "https://dilawskyjordan.github.io/portfolio/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.5"
+    },
+    "autoload": {
+    	"psr-4" : {
+    		"src\\" : "src"
+    	}
+    }
+}
