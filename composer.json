@@ -1,5 +1,5 @@
 {
-    "name": "MongoConcurrency/MongoConcurrency",
+    "name": "Mongo-concurrency/Mongo-concurrency",
     "type": "library",
     "description": "Concurrency PHP library for MongoDB",
     "keywords": ["PHP","MongoDB","concurrency"],
